@@ -1,0 +1,6 @@
+A lab for AI lecture.
+It's a kind of Evolutionary Algorithm which tries to solve this problem:
+
+Consider a set A with n elements and S1 , S2 , ..., Sm subsets of A. Partitionate set
+A in two disjoint subsets D1 and D2 so for all i = from 1 to n, Si is not included 
+in either D1 or D2.
