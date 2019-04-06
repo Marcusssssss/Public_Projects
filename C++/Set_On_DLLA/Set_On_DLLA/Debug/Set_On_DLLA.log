@@ -1,0 +1,11 @@
+﻿  DLLA.cpp
+  DLLAIterator.cpp
+  DLLANode.cpp
+  Set.cpp
+e:\set_on_dlla\set_on_dlla\set.cpp(13): warning C4101: 'ds': unreferenced local variable
+  Set_On_DLLA.cpp
+  Tests.cpp
+  UI.cpp
+  Generating Code...
+  LINK : E:\Set_On_DLLA\Debug\Set_On_DLLA.exe not found or not built by the last incremental link; performing full link
+  Set_On_DLLA.vcxproj -> E:\Set_On_DLLA\Debug\Set_On_DLLA.exe

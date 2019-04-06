@@ -1,0 +1,5 @@
+Set_On_DLLA -- operations on mathematical sets on dynamic linked list on array.
+	    -> A project for Data Structures and Algorithms lecture
+
+Star catalogue - the practical exam at OOP
+	       - GUI in QT

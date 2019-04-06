@@ -1,0 +1,10 @@
+Star 1|Constellation 1|100|2000
+Star 2|Constellation 1|400|3000
+Star 3|Constellation 2|200|4000
+Star 4|Constellation 2|320|2000
+Star 5|Constellation 2|130|2130
+Star 6|Constellation 3|310|1230
+Star 7|Constellation 4|230|2440
+123123|Constellation 4|1|1
+dawda|Constellation 3|11|33
+123|Constellation 2|1|1
