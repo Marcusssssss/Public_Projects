@@ -1,0 +1,4 @@
+I worked on this project for the certificate needed in 12th grade.
+I had no idea about OOP back then; you could see it clearly.
+But I discovered Bootstrap, and I worked with it. 
+It is a very small project, but at that time, it was a great accomplish for me.

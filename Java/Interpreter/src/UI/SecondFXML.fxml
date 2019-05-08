@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="655.0" prefWidth="902.0" styleClass="anchor2" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.SecondController">
+    <children>
+        <Button fx:id="oneStepButton" layoutX="374.0" layoutY="27.0" onAction="#handleOneStepButtonAction" prefHeight="26.0" prefWidth="112.0" text="One step" />
+        <Label fx:id="label" layoutX="14.0" layoutY="31.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="104.0" text="Program states:" />
+      <TableView fx:id="heapTableView" layoutX="16.0" layoutY="106.0" prefHeight="123.0" prefWidth="200.0">
+         <columns>
+            <TableColumn fx:id="heapFirstCol" prefWidth="100.80002212524414" text="Address" />
+            <TableColumn fx:id="heapSecondCol" prefWidth="92.800048828125" text="Value" />
+         </columns></TableView>
+      <TableView fx:id="fileTableView" layoutX="567.0" layoutY="106.0" prefHeight="123.0" prefWidth="200.0">
+         <columns>
+            <TableColumn fx:id="fileFirstCol" prefWidth="96.0" text="ID" />
+            <TableColumn fx:id="fileSecondCol" prefWidth="99.2000732421875" text="File Name" />
+         </columns></TableView>
+      <Label fx:id="label1" layoutX="16.0" layoutY="71.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="156.0" text="Heap Table:" />
+      <Label fx:id="label2" layoutX="567.0" layoutY="71.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="156.0" text="FileTable:" />
+      <ListView fx:id="outputListView" layoutX="286.0" layoutY="106.0" prefHeight="123.0" prefWidth="200.0" />
+      <Label fx:id="label21" layoutX="286.0" layoutY="71.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="156.0" text="Out:" />
+      <ListView fx:id="progStatesListView" layoutX="154.0" layoutY="287.0" prefHeight="123.0" prefWidth="200.0" />
+      <Label fx:id="label211" layoutX="154.0" layoutY="258.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="156.0" text="Program states IDs:" />
+      <TableView fx:id="symTableView" layoutX="455.0" layoutY="287.0" prefHeight="123.0" prefWidth="200.0">
+         <columns>
+            <TableColumn fx:id="symFirstCol" prefWidth="96.79998779296875" text="Var name" />
+            <TableColumn fx:id="symSecondCol" prefWidth="96.79998779296875" text="Value" />
+         </columns>
+      </TableView>
+      <Label fx:id="label11" layoutX="455.0" layoutY="258.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="156.0" text="Symbols Table:" />
+      <ListView fx:id="exeStackListView" layoutX="152.0" layoutY="431.0" prefHeight="160.0" prefWidth="614.0" />
+      <Label fx:id="label212" layoutX="14.0" layoutY="428.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="156.0" text="Execution Stack:" />
+      <Button fx:id="allStepButton" layoutX="655.0" layoutY="27.0" onAction="#handleAllStepButtonAction" prefHeight="26.0" prefWidth="112.0" text="All step" />
+      <Label fx:id="programStatesLabel" layoutX="116.0" layoutY="32.0" />
+      <TextField fx:id="progStatesTextField" layoutX="105.0" layoutY="28.0" prefHeight="26.0" prefWidth="112.0" />
+    </children>
+   <effect>
+      <Blend />
+   </effect>
+</AnchorPane>
