@@ -1,0 +1,14 @@
+﻿select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    display: block;
+    padding: 10px 30px 10px 10px;
+    background-color: #ffffff;
+    background: url(Images/select.png) no-repeat 95% center;
+    color: black;
+    border-radius: 4px;
+    border: 1px solid black;
+    width: 100%;
+}

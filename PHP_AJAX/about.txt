@@ -1,0 +1,2 @@
+A lab for web programming course.
+AJAX is the special thing on it :)

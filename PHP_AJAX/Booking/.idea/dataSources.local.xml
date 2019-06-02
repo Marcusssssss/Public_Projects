@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Microsoft SQL Server - Booking@localhost" uuid="067ad998-036d-4bfb-b007-7deea820b42e">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MSSQL" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>bookinguser</user-name>
+    </data-source>
+  </component>
+</project>
