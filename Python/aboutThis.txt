@@ -1,6 +1,15 @@
-A lab for AI lecture.
-It's a kind of Evolutionary Algorithm which tries to solve this problem:
+Lab2_EA is a lab for AI.
+It's an Evolutionary Algorithm which solves this problem:
 
 Consider a set A with n elements and S1 , S2 , ..., Sm subsets of A. Partitionate set
 A in two disjoint subsets D1 and D2 so for all i = from 1 to n, Si is not included 
 in either D1 or D2.
+
+Lab2-PSO is a lab for AI.
+It's an Particle Swarm Optimisation algorithm which solves this problem:
+
+Consider an undirected graph G(V , E) with 2n nodes ( V is the set of nodes, and
+E is the set of edges). Partitionate the set of nodes in two disjoint sets V 1 and V 2
+, each
+containing exactly n nodes, in such a way that between any two nodes of the subgraphs
+determined by the subsets of nodes should be a path (both subgraphs are conex).

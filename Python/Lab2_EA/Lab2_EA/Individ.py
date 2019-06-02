@@ -2,102 +2,67 @@ from random import random, randint
 
 class Individ:
     
-    def __init__(self, values):
+    def __init__(self, values, binaryArr):
         self.__values = values
-        self.__sets = self.generateSets()
-
-    def generateSets(self):
-        l = list()
-        len1 = randint(1, len(self.__values) - 2)
-        len2 = len(self.__values) - len1 - 1
-        vals = self.generateOneSet(len1, self.__values)
-        l.append(set(vals))
-        l.append(set(self.__values - set(vals)))
-        l.sort(key=len)
-        return l
-
-    def generateOneSet(self, size, values):
-        vals = list(values)
-        y = vals[randint(0, size)]
-        sett = set()
-        sett.add(y)
-        for x in range(size):
-            while y in sett:
-                y = vals[randint(0, len(vals) - 1)]
-            sett.add(y)
-        return sorted(sett)
-
+        self.__binaryArr = binaryArr
+    
     def getValues(self):
         return self.__values
 
     def getSize(self):
-        return self.__size
+        return len(values)
 
-    def getSets(self):
-        return self.__sets
+    def getBinaryArr(self):
+        return self.__binaryArr
 
-    def setSize(self, size):
-        self.__size = size
-
-    def setSets(self, s):
-        self.__sets = s
+    def setBinaryArr(self, s):
+        self.__binaryArr = s
 
     def fitness(self, problem):
         count = 0
         ct1=ct2=0
+        set1=set()
+        set2=set()
+
+        for i in range(0, len(self.__binaryArr)-1):
+            if self.__binaryArr[i]==1:
+                set1.add(self.__values[i])
+            else:
+                set2.add(self.__values[i])
+
+        
         for subset in problem.getSubsets():
-            if subset.issubset(self.__sets[0]):
+            if subset.issubset(set1):
                 count-=1
                 ct1+=1
-            if subset.issubset(self.__sets[1]):
+            if subset.issubset(set2):
                 count-=1
                 ct2+=1
-
         count-=ct1+ct2
 
         return count 
 
     def mutate(self, pM):
         if pM > random():
-            set1 = list(self.__sets[0])
-            set2 = list(self.__sets[1])
-            if len(set1) == 1:
-                alpha = 0
-            else: alpha = randint(0, len(set1) - 1)
-            aux = set1[alpha]
-            set1[alpha] = set2[alpha]
-            set2[alpha] = alpha
-            self.__sets[0] = set(set1)
-            self.__sets[1] = set(set2)
+            try:
+                x=randint(0, len(self.__values)-1)
+                if(self.__binaryArr[x]==1):
+                    self.__binaryArr[x]=2
+                else: self.__binaryArr[x]=1
+            except IndexError:
+                return self
         return self
 
     def crossover(self, anotherParent):
-        set11 = self.__sets[0]
-        set12 = self.__sets[1]
-        set21 = anotherParent.getSets()[0]
-        set22 = anotherParent.getSets()[1]
-
-        set31 = set()
-        set32 = set()
-        
-        if len((set21 - set11).union(set22 - set12)) > 0:
-            set31 = (set21 - set11).union(set22 - set12)
-            set32 = self.getValues() - set31
-        elif len(set22.union(set12) - (set21.union(set11))) > 0:
-            set31 = (set22.union(set12) - (set21.union(set11)))
-            set32 = self.getValues() - set31
-        else:
-            set31 = (set22.union(set11)) - (set21.union(set12))
-            set32 = self.getValues() - set31
-
-        newIndivid = Individ(self.getValues())
-        l = list()
-        l.append(set31)
-        l.append(set32)
-        l.sort(key=len)
-        newIndivid.setSets(l)
-
-        return newIndivid
+        arr1=self.getBinaryArr()
+        arr2=anotherParent.getBinaryArr()
+        x=randint(0, len(arr1)-1)
+        l=list()
+        l=arr1[:x]
+        l.extend(arr2[x+1:len(arr2)-1])
+        return Individ(self.getValues(), l)
 
     def __str__(self):
-        return str("D1: " + str(sorted(self.__sets[0]))) + "\n" + str("D2: " + str(sorted(self.__sets[1])))
+        set1 = {self.__values[i] for i in range(0, len(self.__binaryArr)-1) if self.__binaryArr[i]==1}
+        set2 = {self.__values[i] for i in range(0, len(self.__binaryArr)-1) if self.__binaryArr[i]==2}
+        return "D1: " + str(sorted(set1)) + "\n" + "D2: " + str(sorted(set2))
